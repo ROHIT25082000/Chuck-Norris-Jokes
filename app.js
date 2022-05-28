@@ -8,12 +8,16 @@ function getJokes(e) {
     const numOfJokes = document.querySelector('input[type="number"]').value;
     const xhr = new XMLHttpRequest();
     let jokes = null;
+    const ulList = document.querySelector('.jokes');
+    while (ulList.lastChild) {
+        ulList.removeChild(parent.lastChild);
+    }
     xhr.open('GET',`https://api.icndb.com/jokes/random/${numOfJokes}`,true);
     
     xhr.onload = function() {
         if(this.status === 200) {
 
-            const ulList = document.querySelector('.jokes');
+            
 
             jokes = JSON.parse(this.responseText);
             console.log(jokes);
