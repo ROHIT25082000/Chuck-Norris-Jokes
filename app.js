@@ -6,12 +6,12 @@ button.addEventListener('click', getJokes);
 function getJokes(e) {
 
     const numOfJokes = document.querySelector('input[type="number"]').value;
-    const xhr = new XMLHttpRequest();
     let jokes = null;
     const ulList = document.querySelector('.jokes');
     while (ulList.lastChild) {
         ulList.removeChild(parent.lastChild);
     }
+    const xhr = new XMLHttpRequest();
     xhr.open('GET',`https://api.icndb.com/jokes/random/${numOfJokes}`,true);
     
     xhr.onload = function() {
