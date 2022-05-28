@@ -22,6 +22,8 @@ function getJokes(e) {
                 element.innerHTML = jokes.value[i].joke;
                 ulList.append(element);
             }
+        }else {
+            document.querySelector('body').innerHTML = "ajsdjhasdb";   
         }
     }
     xhr.send();
