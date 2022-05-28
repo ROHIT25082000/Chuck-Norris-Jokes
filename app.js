@@ -7,7 +7,7 @@ function getJokes(e) {
 
     const numOfJokes = document.querySelector('input[type="number"]').value;
     const xhr = new XMLHttpRequest();
-    let jokes;  
+    let jokes = null;
     xhr.open('GET',`https://api.icndb.com/jokes/random/${numOfJokes}`,true);
     
     xhr.onload = function() {
